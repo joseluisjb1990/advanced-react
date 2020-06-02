@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "moxios": "^0.4.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -19,10 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --config .prettierrc.js 'src/**/*.js' --write",
+    "lint": "eslint . --ext .js --fix"
   },
   "browserslist": {
     "production": [
@@ -43,8 +43,8 @@
   },
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
+      "npm run prettier",
+      "npm run lint"
     ]
   },
   "devDependencies": {

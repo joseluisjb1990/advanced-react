@@ -4,8 +4,8 @@ import Root from './Root';
 import App from './components/App';
 
 ReactDOM.render(
-    <Root>
-        <App />
-    </Root>, 
-    document.querySelector('#root')
+  <Root>
+    <App />
+  </Root>,
+  document.querySelector('#root'),
 );
