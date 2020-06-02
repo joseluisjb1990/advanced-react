@@ -28,10 +28,16 @@ export default connect(
           }}
         />
         <div>
-          <button type="button" data-testid="submit-comment">Submit Comment</button>
+          <button type="button" data-testid="submit-comment">
+            Submit Comment
+          </button>
         </div>
       </form>
-      <button type="button" data-testid="fetch-comments" onClick={fetchComments}>
+      <button
+        type="button"
+        data-testid="fetch-comments"
+        onClick={fetchComments}
+      >
         Fetch Comments
       </button>
     </div>
