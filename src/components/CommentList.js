@@ -16,6 +16,7 @@ export default connect(mapStateToProps)(({ comments }) => {
 
   return (
     <div data-testid="comment-list">
+      <h4>Comment List</h4>
       <ul data-testid="comment-list-wrapper">{renderComments()}</ul>
     </div>
   );
