@@ -1,4 +1,4 @@
-import { CHANGE_AUTH } from "../actions/types";
+import { CHANGE_AUTH } from '../actions/types';
 
 export default function commentsReducer(state = false, action) {
   switch (action.type) {

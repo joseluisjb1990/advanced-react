@@ -4,5 +4,5 @@ import authReducer from './auth';
 
 export default combineReducers({
   comments: commentsReducer,
-  auth: authReducer
+  auth: authReducer,
 });
