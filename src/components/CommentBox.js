@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 
-export default connect(null, actions)(({ saveComment }) => {
+export default connect(null, actions)(({ saveComment, fetchComments }) => {
     const [comment, setComment] = useState('');
 
     return (
@@ -23,6 +23,7 @@ export default connect(null, actions)(({ saveComment }) => {
                     <button data-testid="submit-comment">Submit Comment</button>
                 </div>
             </form>
+            <button data-testid="fetch-comments" onClick={fetchComments}>Fetch Comments</button>
         </div>
     );
 });
