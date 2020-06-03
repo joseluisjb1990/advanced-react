@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import requireAuth from './requireAuth';
 
 export default connect(
   null,
   actions,
-)(({ saveComment, fetchComments }) => {
+)(requireAuth(({ saveComment, fetchComments }) => {
   const [comment, setComment] = useState('');
 
   return (
@@ -42,4 +43,4 @@ export default connect(
       </button>
     </div>
   );
-});
+}));
