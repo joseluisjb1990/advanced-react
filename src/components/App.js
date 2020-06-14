@@ -36,10 +36,10 @@ const App = ({ auth, changeAuth }) => {
       data-testid="header-container"
     >
       <li>
-        <Link to="/">Home</Link>
+        <Link data-testid="go-home" to="/">Home</Link>
       </li>
       <li>
-        <Link to="/post">Post A Comment</Link>
+        <Link data-testid="post-comment-button" to="/post">Post A Comment</Link>
       </li>
       <li>{renderButton()}</li>
     </ul>

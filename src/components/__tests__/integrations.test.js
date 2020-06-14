@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import moxios from 'moxios';
-
-import Root from '../Root';
-import App from '../components/App';
+import { BrowserRouter } from 'react-router-dom';
+import Root from '../../Root';
+import App from '../App';
 
 beforeEach(() => {
   moxios.install();
@@ -43,17 +43,26 @@ afterEach(() => {
 });
 
 it('can fetch a list of comments and display them', (done) => {
-  const { queryAllByTestId } = render(
+  const { queryAllByTestId, queryByTestId } = render(
     <Root>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Root>,
   );
 
-  const buttonQuery = queryAllByTestId('fetch-comments');
-  expect(buttonQuery).toHaveLength(1);
-  const [buttonElement] = buttonQuery;
+  const signInButton = queryByTestId('sign-in-button');
+  fireEvent.click(signInButton);
 
-  fireEvent.click(buttonElement);
+  const postCommentButton = queryByTestId('post-comment-button');
+  fireEvent.click(postCommentButton);
+
+  const fetchCommentsButton = queryByTestId('fetch-comments');
+  fireEvent.click(fetchCommentsButton);
+
+  const goHome = queryByTestId('go-home');
+  fireEvent.click(goHome);
+
   moxios.wait(() => {
     const commentsElement = queryAllByTestId('comment-list-element');
     expect(commentsElement).toHaveLength(3);
