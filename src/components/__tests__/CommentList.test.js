@@ -7,6 +7,7 @@ let queryAllByTestId;
 let queryByText;
 
 const comments = ['comment 1', 'comment 2'];
+
 beforeEach(() => {
   const {
     queryAllByTestId: localQueryAllByTestId,

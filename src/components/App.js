@@ -11,20 +11,30 @@ const App = ({ auth, changeAuth }) => {
   const renderButton = () => {
     if (auth) {
       return (
-        <button type="button" onClick={() => changeAuth(false)}>
+        <button
+          data-testid="sign-out-button"
+          type="button"
+          onClick={() => changeAuth(false)}
+        >
           Sign Out
         </button>
       );
     }
     return (
-      <button type="button" onClick={() => changeAuth(true)}>
+      <button
+        data-testid="sign-in-button"
+        type="button"
+        onClick={() => changeAuth(true)}
+      >
         Sign In
       </button>
     );
   };
 
   const renderHeader = () => (
-    <ul>
+    <ul
+      data-testid="header-container"
+    >
       <li>
         <Link to="/">Home</Link>
       </li>

@@ -7,7 +7,7 @@ let queryAllByTestId;
 
 beforeEach(() => {
   const { queryAllByTestId: localQueryAllByTestId } = render(
-    <Root>
+    <Root initialState={{ auth: true }}>
       <CommentBox />
     </Root>,
   );

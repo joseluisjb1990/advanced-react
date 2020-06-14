@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
   return {
-    auth: state.auth
-  }
+    auth: state.auth,
+  };
 }
 
-export default ChildComponent => {
+export default (ChildComponent) => {
   const ComposedComponent = ({ auth, history, ...rest }) => {
     useEffect(() => {
       if (!auth) {
